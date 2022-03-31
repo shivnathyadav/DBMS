@@ -1,0 +1,55 @@
+Q1-  table name- Student
+     primary key- StdNo
+     other columns-StdAddress, StdCity, StdState, StdZip,StdEmail
+     
+     table Name- Lender
+     Primary Key- LenderNo
+     other Column-LendName
+     
+     table Name-InstID
+     Primary Key-InstName
+     Other Column-InstMascot
+     
+     table Name-Loan
+     Primary Key-LoanNo
+     Other Column-ProdDate, DisbMethod,DisbBank, DateAuth, NoteValue, Subsidized, Rate
+     
+     table Name-DisBurseLine
+     Primary Key-DateSent
+     Other Column-Amount,OrigFee,GuarFee
+     
+     
+     
+Q2-      1-M relationship
+        Given to
+        Uses
+        Authorizes
+        Sent
+        
+Q3-     M-N relationship
+         NOne
+         
+         
+         
+Q4     Identifying Relationship
+        Given To
+        Sent
+        
+        
+Q5     Account
+       
+       Primary key- Acctid
+       Other column -AcctName, Balance
+       
+Q6-    Owner table
+       Primary key- OwnId
+       other column- OwnName, OwnPhone
+       
+       Property Table
+       Primary Key - PropId
+       Other Column- BidgNmae,UnitNo, Bdrms       
+       
+               
+      
+         
+                     
