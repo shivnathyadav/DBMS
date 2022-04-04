@@ -1,0 +1,20 @@
+
+Q1. Find out the number of documentaries with deleted scenes.
+
+	select count(film.film_id) as Number_of_Documentaries from film INNER JOIN film_category ON film.film_id=film_category.film_id INNER JOIN category ON category.category_id=film_category.category_id WHERE category.name='Documentary' AND film.special_features='deleted scenes';
+	
+Q2. Find out the number of sci-fi movies rented by the store managed by Jon Stephens.
+
+	select count(film_category.film_id) as Number_Of_Movies from film_category INNER JOIN category ON film_category.category_id=category.category_id INNER JOIN inventory ON film_category.film_id=inventory.film_id INNER JOIN store ON store.store_id=inventory.store_id INNER JOIN staff ON staff.staff_id=store.manager_staff_id where category.name='sci-fi' and staff.first_name='jon' and staff.last_name='Stephens';
+	
+Q3. Find out the total sales from Animation movies.
+
+	select total_sales from sales_by_film_category WHERE category='Animation';
+	
+Q4. Find out the top 3 rented category of movies by “PATRICIA JOHNSON”.
+
+	select category.name,count(customer.customer_id) AS number_of_customer from customer INNER JOIN rental ON customer.customer_id=rental.customer_id INNER JOIN inventory ON inventory.inventory_id=rental.inventory_id INNER JOIN film_category ON film_category.film_id=inventory.film_id INNER JOIN category ON category.category_id=film_category.category_id where customer.first_name='PATRICIA' and customer.last_name='JOHNSON' group by category.name order by count(customer.customer_id) desc LIMIT 3;
+	
+Q5. Find out the number of R rated movies rented by “SUSAN WILSON”.
+
+	Select count(film.rating) AS Number_OF_R_rated_Movies from film INNER JOIN inventory ON film.film_id=inventory.film_id INNER JOIN rental ON rental.inventory_id=inventory.inventory_id INNER JOIN customer ON customer.customer_id=rental.customer_id Where customer.first_name='SUSAN' AND customer.last_name='WILSON' AND film.rating='R';				
